@@ -102,11 +102,7 @@ def dehash(algorithm, code, passList):
             print("[\033[0;31;40m-\033[0;37;40m] Attempt: {} | {}:{}".format(count, code, paswd[i]))
             count += 1
 
-def f_mac(ipconfig):
-    interface = input("Enter the intreface name: ")
-    print()
-    print("MAC address need to be in format: ww:ww:ww:ww:ww:ww")
-    new_mac = input("Enter new mac address: ")
+def f_mac(interface, new_mac):
     print()
     print("Configuring" + new_mac + " address...")
     time.sleep(5)
@@ -114,8 +110,9 @@ def f_mac(ipconfig):
     print("Changing" + interface + " to" + new_mac)
 
     subprocess.call("ifconfig" + interface + " down", shell=True)
-    subprocess.call("ifconfig" + interface + " hw ether" + new_mac, shell=True)
+    subprocess.call("ifconfig" + interface + " hw ether " + new_mac, shell=True)
     subprocess.call("ifconfig" + interface + " up", shell=True)
+
 os.system("clear")
 
 #print("--------------------------------------------")
@@ -144,6 +141,7 @@ while(command != "quit"):
             \033[0;36;40m---NETWORK--------------------------------------\033[0;37;40m
             ping          pinging target.
             portscan      scanning target for open ports.
+            fmac          changing mac address
             \033[0;36;40m---DENIAL OF SERVICE----------------------------\033[0;37;40m
             slowloris     bringing down a target web server.
             \033[0;36;40m---BRUTEFORCE----------------------------\033[0;37;40m
@@ -211,12 +209,16 @@ while(command != "quit"):
             Example: dehash sha256 189f40034be7a199f1fa9891668ee3ab6049f82d38c68be70f596eab2e1857b7 paswd.txt
             """)
 
-    if("f_mac" in command):
-        f_mac(ipconfig)
+    if("fmac" in command):
         if(" " in command):
             parametar = command.split()
+
+            interface = parametar[1]
+            mac = parametar[2]
+
+            f_mac(interface, mac)
         else:
             print("""
-            Interface: eth0 or wlan0
-            New mac: ww:ww:ww:ww:ww:ww
+            Usage: fmac <interface> <mac address>
+            Example: fmac wlan0 11:22:33:44:55:66
             """)
