@@ -217,8 +217,8 @@ while(command != "quit"):
         if(" " in command):
             parametar = command.split()
 
-            interface = parametar[1]
-            mac = parametar[2]
+            interface = str(parametar[1])
+            mac = str(parametar[2])
 
             f_mac(interface, mac)
         else:
