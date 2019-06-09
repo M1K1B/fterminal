@@ -104,14 +104,18 @@ def dehash(algorithm, code, passList):
 
 def f_mac(interface, new_mac):
     print()
-    print("Configuring" + new_mac + " address...")
+    print("Configuring " + interface + " address...")
     time.sleep(5)
     print()
-    print("Changing" + interface + " to" + new_mac)
+    print("Changing " + interface + " to " + new_mac)
 
-    subprocess.call("ifconfig" + interface + " down", shell=True)
-    subprocess.call("ifconfig" + interface + " hw ether " + new_mac, shell=True)
-    subprocess.call("ifconfig" + interface + " up", shell=True)
+    try:
+        subprocess.call("ifconfig " + interface + " down", shell=True)
+        subprocess.call("ifconfig " + interface + " hw ether " + new_mac, shell=True)
+        subprocess.call("ifconfig " + interface + " up", shell=True)
+        print("[+] MAC address changed successfully!")
+    except:
+        print("[-] MAC address has not changed!")
 
 os.system("clear")
 
