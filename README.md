@@ -1,12 +1,12 @@
 # Fterminal
 
-Fterminal is terminal which contains custom hacking tools
+Fterminal is terminal which contains made custom hacking tools
 
 ## Getting Started
 
 ### Prerequisites
 
-Tools you have to have installed before installing fterminal
+Tools you need to have installed before installing fterminal
 
 ```
 Python (newest version)
