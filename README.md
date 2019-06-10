@@ -24,13 +24,13 @@ git clone https://github.com/M1K1B/fterminal.git
 2) Run setup.py
 
 ```
-python setup.py
+python3 setup.py
 ```
 
 You are done. Now you can run script :)
 
 ```
-python control-panel.py
+python3 control-panel.py
 ```
 
 ### Authors
