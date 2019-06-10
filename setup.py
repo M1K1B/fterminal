@@ -3,7 +3,10 @@ import os
 os.system("clear")
 
 def install():
+    os.system("sudo apt install python-pip")
+    os.system("sudo apt install python3-pip")
     os.system("pip install geocoder")
+    os.system("pip3 install geocoder")
 
 print("""
     \033[0;31;40m______ \033[0;37;40m _____                   _             _             _               
