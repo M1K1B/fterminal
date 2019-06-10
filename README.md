@@ -43,4 +43,4 @@ Code is open source and for educational purpose only.
 Authors **DO NOT** take responsibility for users actions.
 
 
-**Leave feedback in form os comments**
+### ***Leave feedback in form of comments***
