@@ -1,6 +1,6 @@
 # Fterminal
 
-Fterminal is terminal which contains made custom hacking tools  
+Fterminal is terminal which contains custom made hacking tools  
 Fterminal is created and tested on **Linux**
 
 ## Getting Started
