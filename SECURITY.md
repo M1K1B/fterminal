@@ -17,8 +17,8 @@ We currently supporting all of versions of our script
 ## Reporting a Vulnerability
 
 
-If u found an issues in our script or script stop working for some reason, you leave a comment
-with an problem in Issues section or simply go on link https://github.com/M1K1B/fterminal/issues
+If you found an issue in our script or script stop working for some reason, you can leave a comment
+with a problem in Issues section or simply go on link https://github.com/M1K1B/fterminal/issues
 
 There is no specific time when updates comming, we realising updates when we have a new idea for tools.
 If we accept vulnerability you can expect that problem will be solved in 1 or 2 days depends on our time,
