@@ -1,4 +1,4 @@
-# Fterminal v1.2
+# FTerminal v1.2
 
 Fterminal is terminal which contains custom made hacking tools  
 Fterminal is created and tested on **Linux**
