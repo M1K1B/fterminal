@@ -401,10 +401,10 @@ while(command != "quit"):
                 Usage: crypt encrypt <text>
                 Example: crypt encrypt some_random_text
             Decryption
-                Usage: crypt decrypt <text>
-                Example: crypt decrypt some_random_text
+                Usage: crypt decrypt <ecryption> <code>
+                Example: crypt decrypt f$.ØÜÞæìÙêÝçÜÞì×æÓ× 331
 
-            [! IMPORTANT] Text can not contain space, use _ instead!
+            [! IMPORTANT] Text can NOT contain space, use _ instead!
             """)
 
     if ("hashit" in command):
@@ -420,5 +420,5 @@ while(command != "quit"):
                 Usage: hashit <hash algorithm> <text>
                 Example: hashit md5 some_random_text
 
-                [! IMPORTANT] Text can not contain space, use _ instead!
+                [! IMPORTANT] Text can NOT contain space, use _ instead!
                 """)
