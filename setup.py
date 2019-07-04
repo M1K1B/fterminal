@@ -20,7 +20,7 @@ print("""
                                                                             \033[0;36;40mv1.0\033[0;37;40m
 """)
 
-command = raw_input("Install packages needed for fterminal(yes/no): ")
+command = input("Install packages needed for fterminal(yes/no): ")
 
 if command == "yes" or command == "y":
     install()
