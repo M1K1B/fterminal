@@ -5,6 +5,7 @@ import time
 import threading
 import hashlib
 import geocoder
+import subprocess
 
 #GLOBAL
 commList = ["ping", "portscan", "quit", "help", "fmac", "ipt", "slowloris", "dehash"]
@@ -250,6 +251,13 @@ def decrypt(txt, code):
     Decrypted text: {}
     """.format(txt, dec[3:]))
 
+def wps(interface):
+    os.system("gnome-terminal -e 'wash --interface {}'".format(interface))
+    print('\033[0;31;40m# Press CTRL+C to close window \033[0;37;40m')
+
+def tor(option):
+    os.system('perl tools/nipe/nipe.pl {}'.format(option))
+
 os.system("clear")
 
 #print("--------------------------------------------")
@@ -265,7 +273,7 @@ print("""
     \033[0;31;40m|  _|  \033[0;37;40m  | | / _ \| '__|| '_ ` _ \ | || '_ \  / _` || |
     \033[0;31;40m| |    \033[0;37;40m  | ||  __/| |   | | | | | || || | | || (_| || |
     \033[0;31;40m\_|    \033[0;37;40m  \_/ \___||_|   |_| |_| |_||_||_| |_| \__,_||_|
-                                                       \033[0;36;40mv1.2\033[0;37;40m
+                                                       \033[0;36;40mv1.3\033[0;37;40m
 
     type \033[0;36;40mhelp\033[0;37;40m for all commands
 """)
@@ -280,6 +288,7 @@ while(command != "quit"):
         [*]            quit         exit from fterminal         [*]
         [*]            help         list all commands           [*]
         [*]\033[0;36;40m=================NETWORK=============================\033[0;37;40m[*]
+    [*]             tor         use tor network             [*]
 	[*]        webcheck         resolve website             [*]
 	[*]        portscan         open ports                  [*]
         [*]            fmac         change mac address          [*]
@@ -421,4 +430,30 @@ while(command != "quit"):
                 Example: hashit md5 some_random_text
 
                 [! IMPORTANT] Text can NOT contain space, use _ instead!
+                """)
+
+    if ("wps" in command):
+        if (" " in command):
+            parametar = command.split()
+
+            interface = parametar[1]
+
+            wps(interface)
+        else:
+            print("""
+                Usage: wps <interface in monitor mode>
+                Example: wps wlan0
+                """)
+
+    if ("tor" in command):
+        if (" " in command):
+            parametar = command.split()
+
+            option = parametar[1]
+
+            tor(option)
+        else:
+            print("""
+                Usage: tor <start/stop/restart/status>
+                Example: tor start
                 """)
